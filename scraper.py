@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 from fake_useragent import UserAgent
+import os 
 def get_page_content(url, headers):
     """Sends an HTTP GET request to fetch the HTML content of a specified URL.
 
@@ -109,11 +110,15 @@ def main():
     }
     
     html = get_page_content(target_url, my_headers)
-    
+    output_dir = os.path.join("output", "data")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+        
+    output_filepath = os.path.join(output_dir, "raw_bestsellers.csv")
     if html:
         product_list = parse_product_data(html)
         # As per standardization requirements, specify the output filename as raw_bestsellers.csv
-        save_to_csv(product_list, filename="raw_bestsellers.csv")
+        save_to_csv(product_list, filename=output_filepath)
 
 if __name__ == "__main__":
     main()

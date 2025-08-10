@@ -4,7 +4,7 @@
 #                 clean data (cleaned_bestsellers.csv).
 
 import pandas as pd
-
+import os 
 def clean_amazon_data(df):
     """Takes a raw Amazon product DataFrame and performs comprehensive data cleaning and type conversion.
 
@@ -54,12 +54,12 @@ def main():
     It handles reading the raw CSV, calling the cleaning function, 
     and saving the processed data.
     """
-    input_filename = "raw_bestsellers.csv"
-    output_filename = "cleaned_bestsellers.csv"
+    input_filepath = os.path.join("output", "data", "raw_bestsellers.csv")
+    output_filepath = os.path.join("output", "data", "cleaned_bestsellers.csv")
     
     try:
-        print(f"Reading raw file: {input_filename}")
-        raw_df = pd.read_csv(input_filename)
+        print(f"Reading raw file: {input_filepath}")
+        raw_df = pd.read_csv(input_filepath)
         
         print("\n--- Data info before cleaning ---")
         raw_df.info()
@@ -74,11 +74,11 @@ def main():
         print("\n--- Preview of cleaned data (first 5 rows) ---")
         print(cleaned_df.head())
 
-        cleaned_df.to_csv(output_filename, index=False, encoding="utf_8_sig")
-        print(f"\nTask complete! Cleaned data saved to {output_filename}")
+        cleaned_df.to_csv(output_filepath, index=False, encoding="utf_8_sig") 
+        print(f"\nTask complete! Cleaned data saved to {output_filepath}")
 
     except FileNotFoundError:
-        print(f"Error: Input file not found at '{input_filename}'. Please run scraper.py first to generate it.")
+        print(f"Error: Input file not found at '{input_filepath}'. Please run scraper.py first.")
     except Exception as e:
         print(f"An unexpected error occurred during processing: {e}")
 

@@ -127,29 +127,29 @@ def main():
     Handles reading the cleaned data, creating the output directory, 
     and calling all visualization functions sequentially.
     """
-    input_filename = "cleaned_bestsellers.csv"
-    output_folder = "plots"
+    input_filepath = os.path.join("output", "data", "cleaned_bestsellers.csv")
+    output_dir = os.path.join("output", "plots")
 
     try:
-        print(f"Reading cleaned file: {input_filename}")
-        df_cleaned = pd.read_csv(input_filename)
+        print(f"Reading cleaned file: {input_filepath}")
+        df_cleaned = pd.read_csv(input_filepath) 
         
-        # Create output directory if it doesn't exist
-        if not os.path.exists(output_folder):
-            os.makedirs(output_folder)
-            print(f"Created output directory: {output_folder}")
+        
+        if not os.path.exists(output_dir):
+            os.makedirs(output_dir)
+            print(f"Created output directory: {output_dir}")
 
         # Call all visualization functions
-        visualize_top_reviews(df_cleaned, output_folder)
-        visualize_price_distribution(df_cleaned, output_folder)
-        visualize_filtered_price_distribution(df_cleaned, output_folder)
-        visualize_price_vs_rating(df_cleaned, output_folder)
-        visualize_price_vs_review_count(df_cleaned, output_folder)
+        visualize_top_reviews(df_cleaned, output_dir)
+        visualize_price_distribution(df_cleaned, output_dir)
+        visualize_filtered_price_distribution(df_cleaned, output_dir)
+        visualize_price_vs_rating(df_cleaned, output_dir)
+        visualize_price_vs_review_count(df_cleaned, output_dir)
         
         print("\n[--- Visualization module execution complete ---]")
         
     except FileNotFoundError:
-        print(f"Error: Input file not found at '{input_filename}'. Please run cleaner.py first to generate it.")
+        print(f"Error: Input file not found at '{input_filepath}'. Please run cleaner.py first to generate it.")
     except Exception as e:
         print(f"An unexpected error occurred during processing: {e}")
 
