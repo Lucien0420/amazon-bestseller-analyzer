@@ -55,23 +55,23 @@ An end-to-end data pipeline project that scrapes, cleans, and visualizes best-se
 ## Analysis Results Preview
 
 #### 1. Price Distribution (All Products)
-![Price Distribution](output/plots/price_distribution_full.png)
+![Price Distribution](assets/price_distribution_full.png)
 * **Insight:** Most products are concentrated in the lower price range, with a few high-priced outliers that could skew analysis.
 
 #### 2. Price Distribution (Filtered, Under $200)
-![Filtered Price Distribution](output/plots/price_distribution_filtered.png)
+![Filtered Price Distribution](assets/price_distribution_filtered.png)
 * **Insight:** After filtering, it's clear that the majority of best-sellers are priced under $50.
 
 #### 3. Top 10 Most Reviewed Products
-![Top 10 Most Reviewed Products](output/plots/top_10_most_reviewed.png)
+![Top 10 Most Reviewed Products](assets/top_10_most_reviewed.png)
 * **Insight:** Provides a clear view of the most popular items, which can inform market selection strategies.
 
 #### 4. Price vs. Rating Scatter Plot
-![Price vs. Rating](output/plots/price_vs_rating.png)
+![Price vs. Rating](assets/price_vs_rating.png)
 * **Insight:** For products under $200, there is no strong correlation suggesting that higher price equals higher rating, indicating the prevalence of high value-for-money products.
 
 #### 5. Price vs. Review Count (with Rating dimension)
-![Price vs. Review Count](output/plots/price_vs_review_count.png)
+![Price vs. Review Count](assets/price_vs_review_count.png)
 * **Insight:** This multi-dimensional plot reveals that many "blockbuster" products with extremely high review counts are very affordably priced (under $50) and generally have high ratings (indicated by the greener, larger dots), highlighting the core consumer market segment.
 
 ---
@@ -134,21 +134,21 @@ _Note: The Chinese version below is kept for reference._
 ## 分析成果預覽
 
 #### 1. 商品價格分佈 (含離群值)
-![商品價格分佈](output/plots/price_distribution_full.png)
+![商品價格分佈](assets/price_distribution_full.png)
 * **洞見:** 大部分商品集中在低價區間，但存在少數高價商品，可能是分析時的干擾項。
 
 #### 2. 商品價格分佈 (過濾後, < $200)
-![過濾後的商品價格分佈](output/plots/price_distribution_filtered.png)
+![過濾後的商品價格分佈](assets/price_distribution_filtered.png)
 * **洞見:** 去除高價商品後，可以更清晰地看到暢銷商品主要集中在 $0 - $50 美元區間。
 
 #### 3. 評論數 Top 10 商品
-![評論數 Top 10 商品](output/plots/top_10_most_reviewed.png)
+![評論數 Top 10 商品](assets/top_10_most_reviewed.png)
 * **洞見:** 市場熱度最高的商品類型可以一目了然，為選品提供參考。
 
 #### 4. 價格 vs. 評分 (散佈圖)
-![價格 vs. 評分](output/plots/price_vs_rating.png)
+![價格 vs. 評分](assets/price_vs_rating.png)
 * **洞見:** 在 $200 美元以下，似乎沒有「越貴評分越高」的絕對趨勢，高性價比商品普遍存在。
 
 #### 5. 價格 vs. 評論數 (含評分維度)
-![價格 vs. 評論數](output/plots/price_vs_review_count.png)
+![價格 vs. 評論數](assets/price_vs_review_count.png)
 * **洞見:** 這張圖揭示了更複雜的關係。許多評論數極高的「爆款」商品，價格都非常親民（低於 $50），且評分普遍不低（綠色點代表高分），這可能是市場的主力消費區間。
