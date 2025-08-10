@@ -17,3 +17,9 @@ dist/
 # OS specific
 .DS_Store
 Thumbs.db
+
+# Data files
+*.csv
+
+# Generated plots
+plots/

@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import time
-
+from fake_useragent import UserAgent
 def get_page_content(url, headers):
     """Sends an HTTP GET request to fetch the HTML content of a specified URL.
 
@@ -97,8 +97,14 @@ def main():
     Orchestrates the entire workflow of fetching, parsing, and saving the data.
     """
     target_url = "https://www.amazon.com/Best-Sellers-Computers-Accessories/zgbs/pc/"
+
+    # Create a UserAgent object and randomly generate one
+    ua = UserAgent()
+    random_user_agent = ua.random
+    print(f"Using random User-Agent: {random_user_agent}")
+
     my_headers = {
-        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36',
+        'User-Agent': random_user_agent,
         'Accept-Language': 'en-US,en;q=0.9'
     }
     
